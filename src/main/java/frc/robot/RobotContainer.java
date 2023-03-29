@@ -1,16 +1,21 @@
 // RobotContainer.java
 package frc.robot;
-
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.commands.MotorCommand;
-import frc.robot.subsystems.MotorSubsystem;
+import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.commands.ExampleCommand;
+import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.ExampleSubsystem;
+
+
+
 
 public class RobotContainer {
-  private final MotorSubsystem motorSubsystem = new MotorSubsystem();
-  private final MotorCommand motorCommand = new MotorCommand(motorSubsystem);
+  //private final MotorSubsystem motorSubsystem = new MotorSubsystem();
+  //private final MotorCommand motorCommand = new MotorCommand(motorSubsystem);
 
   public RobotContainer() {
-    motorSubsystem.setDefaultCommand(motorCommand);
+    //motorSubsystem.setDefaultCommand(motorCommand);
   }
 
   public Command getAutonomousCommand() {

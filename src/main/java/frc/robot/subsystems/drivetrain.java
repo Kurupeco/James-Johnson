@@ -1,27 +1,23 @@
-// MotorSubsystem.java
 package frc.robot.subsystems;
-
-import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.can.TalonFX;
+import frc.robot.lib.DriveModule;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants;
+import static frc.robot.Constants.*;
 
-public class MotorSubsystem extends SubsystemBase {
-  private final TalonFX leftMotor = new TalonFX(Constants.kLeftMotorID);
-  private final TalonFX rightMotor = new TalonFX(Constants.kRightMotorID);
+public class Drivetrain extends SubsystemBase {
+    /* Drivetrain subsystem responsible for the movement of the robot
+     * contains only setup and basic control */
+    public Drivetrain() {}
 
-  public MotorSubsystem() {
-    leftMotor.setInverted(false);
-    rightMotor.setInverted(false);
-  }
+    private DriveModule leftMotors = new DriveModule(DRIVETRAIN_LEFT_BACK_GEARBOX_VICTORSP, DRIVETRAIN_LEFT_FRONT_GEARBOX_VICTORSP); 
+    private DriveModule rightMotors = new DriveModule(DRIVETRAIN_RIGHT_BACK_GEARBOX_VICTORSP, DRIVETRAIN_RIGHT_FRONT_GEARBOX_VICTORSP); 
 
-  public void setMotorSpeed(double speed) {
-    leftMotor.set(ControlMode.PercentOutput, speed);
-    rightMotor.set(ControlMode.PercentOutput, speed);
-  }
-
-  public void stopMotors() {
-    leftMotor.set(ControlMode.PercentOutput, 0);
-    rightMotor.set(ControlMode.PercentOutput, 0);
-  }
+@Override
+    public void periodic() {
+        // This method will be called once per scheduler run
+    }
+    
+    @Override
+    public void simulationPeriodic() {
+        // This method will be called once per scheduler run during simulation
+    }
 }

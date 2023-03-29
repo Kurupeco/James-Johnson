@@ -2,11 +2,11 @@
 package frc.robot;
 
 public final class Constants {
-  public static final int kLeftMotorID = 1;
-  public static final int kRightMotorID = 2;
-  public static final double kMotorSpeed = 0.5;
-  public static final double kDelaySeconds = 3.0;
-
+  //VictorSP
+    public static final int DRIVETRAIN_LEFT_FRONT_GEARBOX_VICTORSP = 0;
+    public static final int DRIVETRAIN_LEFT_BACK_GEARBOX_VICTORSP = 1;
+    public static final int DRIVETRAIN_RIGHT_FRONT_GEARBOX_VICTORSP = 2;
+    public static final int DRIVETRAIN_RIGHT_BACK_GEARBOX_VICTORSP = 3;
 }
 
 
