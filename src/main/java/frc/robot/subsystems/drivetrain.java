@@ -1,23 +1,27 @@
+// MotorSubsystem.java
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import frc.robot.Constants;
 
-public class MyMotorSubsystem extends SubsystemBase {
-  private final CANSparkMax m_motor;
+public class MotorSubsystem extends SubsystemBase {
+  private final TalonFX leftMotor = new TalonFX(Constants.kLeftMotorID);
+  private final TalonFX rightMotor = new TalonFX(Constants.kRightMotorID);
 
-  public MyMotorSubsystem() {
-    kmotor = new CANSparkMax(Constants.kTalonFXID, MotorType.kBrushless);
+  public MotorSubsystem() {
+    leftMotor.setInverted(false);
+    rightMotor.setInverted(false);
   }
 
-  public void setSpeed(double speed) {
-    kmotor.set(speed);
+  public void setMotorSpeed(double speed) {
+    leftMotor.set(ControlMode.PercentOutput, speed);
+    rightMotor.set(ControlMode.PercentOutput, speed);
   }
 
-  public void stop() {
-    kmotor.set(0);
+  public void stopMotors() {
+    leftMotor.set(ControlMode.PercentOutput, 0);
+    rightMotor.set(ControlMode.PercentOutput, 0);
   }
 }
-
-
